@@ -156,7 +156,7 @@ document.addEventListener(RENDER_EVENT, function () {
 });
 
 // Storage
-function isStorageExist() {
+function isStorageExist() /* boolean */ {
   if (typeof (Storage) == undefined) {
     alert('Browser kamu tidak mendukung local storage');
     return false;
@@ -186,6 +186,10 @@ document.addEventListener(SAVED_EVENT, function () {
     toastContainer.removeChild(toastMessage);
   }, 3000);
 });
+
+// document.addEventListener(SAVED_EVENT, function () {
+//   console.log(localStorage.getItem(STORAGE_KEY));
+// });
 
 function loadDataFromStorage() {
   const serializedData = localStorage.getItem(STORAGE_KEY);
